@@ -7,13 +7,13 @@
 
 
 ## Languages Used
-Javascript
-EJS
-MongoDB
-Mongoose
-Bootstrap
-Express.js
-Node.js
+-Javascript
+-EJS
+-MongoDB
+-Mongoose
+-Bootstrap
+-Express.js
+-Node.js
 
 ## Technologies Used
 
