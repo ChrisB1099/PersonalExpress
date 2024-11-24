@@ -1,6 +1,6 @@
 const express = require('express')
 const app = express()
-var port     = process.env.PORT || 7000;
+const bodyParser = require('body-parser')
 const MongoClient = require('mongodb').MongoClient
 
 var db, collection;
@@ -8,7 +8,7 @@ var db, collection;
 const url = "mongodb+srv://christianbradford99:nA9vh6TEnS7w5frO@cluster0.xs3nl.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
 const dbName = "PersonalExpress";
 
-app.listen(port, () => {
+app.listen(7000, () => {
     MongoClient.connect(url, { useNewUrlParser: true, useUnifiedTopology: true }, (error, client) => {
         if(error) {
             throw error;
@@ -19,8 +19,8 @@ app.listen(port, () => {
 });
 
 app.set('view engine', 'ejs')
-app.use(express.urlencoded({extended: true}))
-app.use(express.json())
+app.use(bodyParser.urlencoded({extended: true}))
+app.use(bodyParser.json())
 app.use(express.static('public'))
 
 app.put('/athletes', (req, res) => {
